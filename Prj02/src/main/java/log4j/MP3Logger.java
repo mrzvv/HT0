@@ -10,10 +10,10 @@ import java.util.HashMap;
 public class MP3Logger {
     public void duplicates(HashMap<String, Artist> artists) {
         Logger logger = LogManager.getLogger();
-        for (Artist art : artists.values()) {
-            for (Album alb : art.getAlbums().values()) {
-                for (int i = 0; i < alb.getSongs().values().size(); i++) {
-                    if (alb.getSongs().values().contains(alb.getSongs().get(i+1))) {
+        for (Artist a : artists.values()) {
+            for (Album b : a.getAlbums().values()) {
+                for (int i = 0; i < b.getSongs().values().size(); i++) {
+                    if (b.getSongs().values().contains(b.getSongs().get(i+1))) {
                         logger.info("The duplicate has been found.");
                     }
                 }
